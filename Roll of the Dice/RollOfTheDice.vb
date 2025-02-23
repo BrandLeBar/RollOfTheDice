@@ -2,7 +2,7 @@
 'RCET 2265
 'Spring 2025
 'Roll of the Dice
-'
+'https://github.com/BrandLeBar/RollOfTheDice.git
 
 Option Compare Text
 Option Explicit On
