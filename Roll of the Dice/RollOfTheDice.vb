@@ -10,17 +10,34 @@ Option Strict On
 Module RollOfTheDice
 
     Sub Main()
-        Console.WriteLine("Roll of the Dice ".PadLeft(35))
+        Dim Rolls(12) As Integer
 
-        For i = 0 To 1000
+        Console.WriteLine("Roll of the Dice ".PadLeft(53))
+        Console.WriteLine(StrDup(88, "_"))
 
+        For i = 1 To 1000
+            Rolls(RandomNumberGenerator(1, 12)) += 1
         Next
+
+        Console.WriteLine()
+
+        For i = 2 To UBound(Rolls)
+            Console.Write($"{CStr(i),4}   |")
+        Next
+
+        Console.WriteLine()
+        Console.WriteLine(StrDup(88, "_"))
+        Console.WriteLine()
+
+        For i = 2 To UBound(Rolls)
+            Console.Write($"{CStr(Rolls(i)),4}   |")
+        Next
+
     End Sub
 
     Function RandomNumberGenerator(min As Integer, max As Integer) As Integer
         Randomize()
-        Return CInt(Math.Floor(max - min) * Rnd() - 1)
+        Return CInt(Math.Ceiling((max - min) * Rnd() + min))
     End Function
 
-    Sub 
 End Module
